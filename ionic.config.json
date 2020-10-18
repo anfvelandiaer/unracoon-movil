@@ -1,0 +1,7 @@
+{
+  "name": "unracoon-movil",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
