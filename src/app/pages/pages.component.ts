@@ -15,7 +15,7 @@ export class PagesComponent implements OnInit {
   public selectedIndex = 0;
   public appPages = [
     {
-      title: 'Asasasas',
+      title: 'Perfil',
       url: '/learn/perfil',
       icon: 'person'
     },
