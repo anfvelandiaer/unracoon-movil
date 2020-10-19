@@ -1,0 +1,35 @@
+<ion-content>
+  <ion-card>
+    <ion-card-header>Agregar Ticket</ion-card-header>
+    <ion-card-content>
+      <form
+        class="form-horizontal form-material"
+        id="loginform"
+        autocomplete="off"
+        [formGroup]="ticketForm"
+        (ngSubmit)="sendTicket()"
+      >
+        <ion-item>
+          <ion-label>Issue</ion-label>
+          <ion-textarea
+            class="form-control"
+            placeholder="Issue"
+            formControlName="issue"
+          ></ion-textarea>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Seccion</ion-label>
+          <ion-input
+            class="form-control"
+            placeholder="section"
+            formControlName="section"
+          ></ion-input>
+        </ion-item>
+        <button ion-button type="submit" block>Enviar</button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+  <button ion-button block (click)="dismiss()">Cerrar</button>
+  <button ion-button block (click)="dismiss()">Cerrar</button>
+</ion-content>

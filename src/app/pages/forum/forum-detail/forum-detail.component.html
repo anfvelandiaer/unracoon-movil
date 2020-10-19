@@ -1,0 +1,44 @@
+<button class="btn" (click)="dismiss()">Atras</button>
+<ion-card>
+  <ion-card-header>{{ thread.title }}</ion-card-header>
+  <ion-card-content>
+    <ion-list>
+      <ion-item>
+        <ion-label>{{ thread.description }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>{{ thread.userName }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>{{ thread.userId }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>{{ thread._id }}</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>
+
+<ion-list>
+  <ion-item *ngFor="let entry of entrys">
+    <ion-label>{{ entry.message }}</ion-label>
+  </ion-item>
+</ion-list>
+
+<form
+  class="form-horizontal form-material"
+  id="loginform"
+  autocomplete="off"
+  [formGroup]="entryForm"
+  (ngSubmit)="sendEntry()"
+>
+  <ion-item>
+    <ion-label>Mensaje</ion-label>
+    <ion-input
+      class="form-control"
+      placeholder="Message"
+      formControlName="message"
+    ></ion-input>
+  </ion-item>
+  <button ion-button type="submit" block>Enviar</button>
+</form>

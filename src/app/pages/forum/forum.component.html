@@ -1,0 +1,33 @@
+<ion-content>
+  <ion-fab
+    vertical="top"
+    horizontal="end"
+    slot="fixed"
+    (click)="presentFormModal()"
+  >
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Foro Nivel A1</ion-card-title>
+      <ion-card-subtitle>Lista de entradas</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list>
+        <ion-item
+          button
+          *ngFor="let thread of threads"
+          (click)="presentDetailModal(thread)"
+        >
+          <ion-label>{{ thread.title }}</ion-label>
+          <ion-label>{{ thread.userName }}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<app-thread-form *ngIf="formVisible" class="form-bottom"></app-thread-form>

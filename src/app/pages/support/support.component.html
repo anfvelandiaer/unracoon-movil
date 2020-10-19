@@ -1,0 +1,26 @@
+<ion-content>
+  <ion-fab
+    vertical="top"
+    horizontal="end"
+    slot="fixed"
+    (click)="presentFormModal()"
+  >
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Soporte</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list>
+        <ion-item button *ngFor="let ticket of tickets">
+          <ion-label>{{ ticket.issue }}</ion-label>
+          <ion-label>{{ ticket.userName }}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
