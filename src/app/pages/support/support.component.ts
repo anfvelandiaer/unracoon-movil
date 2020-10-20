@@ -31,4 +31,10 @@ export class SupportComponent implements OnInit {
     });
     return await modal.present();
   }
+
+  doRefresh(event) {
+    setTimeout(() => {
+      location.reload();
+    }, 1000);
+  }
 }

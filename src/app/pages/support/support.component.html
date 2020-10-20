@@ -1,4 +1,12 @@
 <ion-content>
+  <ion-refresher
+    slot="fixed"
+    (ionRefresh)="doRefresh($event)"
+    pullingIcon="arrow-dropdown"
+    pullingText="Pull to refresh"
+  >
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
   <ion-fab
     vertical="top"
     horizontal="end"
@@ -16,9 +24,16 @@
 
     <ion-card-content>
       <ion-list>
-        <ion-item button *ngFor="let ticket of tickets">
-          <ion-label>{{ ticket.issue }}</ion-label>
-          <ion-label>{{ ticket.userName }}</ion-label>
+        <ion-item *ngFor="let ticket of tickets">
+          <ion-icon
+            slot="start"
+            ios="construct-outline"
+            md="construct-sharp"
+          ></ion-icon>
+          <ion-label>
+            <h2>{{ ticket.issue }}</h2>
+            <p>{{ ticket.userName }}</p>
+          </ion-label>
         </ion-item>
       </ion-list>
     </ion-card-content>

@@ -30,7 +30,7 @@ export class SupportFormComponent implements OnInit {
     this.supportService
       .addTicket(this.ticketForm.value)
       .subscribe((response) => {
-        console.log(response);
+        this.dismiss();
       });
   }
 

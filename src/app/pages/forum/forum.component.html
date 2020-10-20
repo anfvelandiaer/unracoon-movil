@@ -1,4 +1,8 @@
 <ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)" pullingIcon="arrow-dropdown"
+pullingText="Pull to refresh">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
   <ion-fab
     vertical="top"
     horizontal="end"
@@ -16,16 +20,24 @@
     </ion-card-header>
 
     <ion-card-content>
+
+
       <ion-list>
         <ion-item
-          button
           *ngFor="let thread of threads"
           (click)="presentDetailModal(thread)"
+          detail
+          button
         >
-          <ion-label>{{ thread.title }}</ion-label>
-          <ion-label>{{ thread.userName }}</ion-label>
+        <ion-icon slot="start" ios="people-outline" md="people-sharp"></ion-icon>
+        <ion-label>
+          <h2>{{ thread.title }}</h2>
+          <p>{{ thread.userName }}</p>
+        </ion-label>
+
         </ion-item>
       </ion-list>
+      
     </ion-card-content>
   </ion-card>
 </ion-content>

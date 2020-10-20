@@ -27,11 +27,11 @@ export class ThreadFormComponent implements OnInit {
     });
   }
 
-  sendThread() {
-    this.forumService
+  async sendThread() {
+    await this.forumService
       .addThread(this.threadForm.value)
       .subscribe((response: ThreadResponse) => {
-        console.log(response.data.allThreads);
+        this.dismiss();
       });
   }
 

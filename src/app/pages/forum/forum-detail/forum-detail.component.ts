@@ -40,11 +40,12 @@ export class ForumDetailComponent implements OnInit {
     });
   }
 
-  sendEntry() {
-    this.forumService
+  async sendEntry() {
+    await this.forumService
       .addEntry(this.entryForm.value)
       .subscribe((response: EntryResponse) => {
         console.log(response.data.createEntry);
+        this.dismiss();
       });
   }
 }

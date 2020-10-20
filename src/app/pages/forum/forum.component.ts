@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Thread, ThreadResponse } from 'src/app/models/forum.model';
 import { ForumService } from 'src/app/services/forum.service';
-import { ModalController } from '@ionic/angular';
+import { IonContent, ModalController } from '@ionic/angular';
 import { ThreadFormComponent } from './thread-form/thread-form.component';
 import { ForumDetailComponent } from './forum-detail/forum-detail.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-forum',
@@ -16,10 +17,12 @@ export class ForumComponent implements OnInit {
   threads: Thread[];
   threadSelected: Thread;
   formVisible = false;
+  @ViewChild(IonContent) content: IonContent;
 
   constructor(
     private forumService: ForumService,
-    public modalController: ModalController
+    public modalController: ModalController,
+    public router: Router,
   ) {}
 
   ngOnInit(): void {
@@ -50,5 +53,11 @@ export class ForumComponent implements OnInit {
       },
     });
     return await modal.present();
+  }
+
+  doRefresh(event) {
+    setTimeout(() => {
+      location.reload();
+    }, 1000);
   }
 }
