@@ -8,6 +8,10 @@ import { ForumComponent } from './forum/forum.component';
 import { SupportComponent } from './support/support.component';
 import { VocabularyComponent } from './vocabulary/vocabulary.component';
 import { ExamsComponent } from './exams/exams.component';
+import {WeekQuizComponent} from './exams/weekQuiz/weekQuiz.component';
+import {UserQuizFormComponent} from './exams/userQuiz/userQuiz-form/userQuiz-form.component';
+import {UserQUizComponent} from './exams/userQuiz/userQuiz.component';
+
 
 const routes: Routes = [
   {
@@ -33,6 +37,9 @@ const routes: Routes = [
         data: { titulo: 'Vocabulario' },
       },
       { path: 'exam', component: ExamsComponent, data: { titulo: 'Examenes' } },
+      {path: 'weekQuiz', component: WeekQuizComponent, data: {titulo: 'WeekQuiz'}},
+      {path: 'userQuizzes', component: UserQUizComponent, data: {titulo: 'UserQuiz'}},
+      {path: 'weekQuiz/quiz', component: UserQuizFormComponent, data: {titulo: 'UserQuiz'}}
     ],
   },
 ];
