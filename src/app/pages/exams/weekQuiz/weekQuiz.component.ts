@@ -4,7 +4,7 @@ import { ExamsService } from 'src/app/services/exams.service';
 import { Subscription } from 'rxjs';
 import {VocabularyService} from 'src/app/services/vocabulary.service';
 import {WordsResponse, Words} from 'src/app/models/vocabulary.model';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import {ThreadFormComponent} from "../../forum/thread-form/thread-form.component";
 
 @Component({
   selector: 'app-exams',
@@ -18,7 +18,6 @@ export class WeekQuizComponent implements OnInit {
   vocabularioSubscription: Subscription;
   weekQuiz;
   word: Words[];
-  faPlus = faPlus;
   showDetail = false;
   constructor(private examsService: ExamsService, private vocabularyService: VocabularyService) {
   }

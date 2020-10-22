@@ -1,10 +1,25 @@
-<ul>
-  <li *ngFor = "let userQuiz of userQuizes">
-    <h3>{{userQuiz.idQuiz}}</h3>
-    <h3>{{userQuiz.userId}}</h3>
-    <h3>{{userQuiz.date}}</h3>
-    <h3>{{userQuiz.words}}</h3>
-    <h3>{{userQuiz.correctWords}}</h3>
-    <h3>{{userQuiz.score}}</h3>
-  </li>
-</ul>
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Users Week Quiz</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+
+    <ion-list>
+      <ion-item
+              *ngFor = "let userQuiz of userQuizes"
+
+      >
+        <ion-icon slot="start" ios="people-outline" md="people-sharp"></ion-icon>
+        <ion-label>
+          <h3>{{userQuiz.idQuiz}}</h3>
+          <h3>{{userQuiz.userId}}</h3>
+          <h3>{{userQuiz.date}}</h3>
+          <h3>{{userQuiz.words}}</h3>
+          <h3>{{userQuiz.correctWords}}</h3>
+          <h3>{{userQuiz.score}}</h3>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>
