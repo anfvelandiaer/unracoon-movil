@@ -21,6 +21,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { SupportFormComponent } from './support/support-form/support-form.component';
 import { CategoryComponent } from './vocabulary/category/category.component';
 import { WordsComponent } from './vocabulary/words/words.component';
+import { LevelsComponent } from './levels/levels.component';
+
 
 @NgModule({
   declarations: [
@@ -38,6 +40,7 @@ import { WordsComponent } from './vocabulary/words/words.component';
     SupportFormComponent,
     CategoryComponent,
     WordsComponent,
+    LevelsComponent
   ],
   exports: [PagesComponent],
   imports: [

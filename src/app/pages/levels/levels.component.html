@@ -1,0 +1,26 @@
+<ion-content>
+    <ion-card>
+    <ion-card-header>
+      <ion-card-title>Niveles</ion-card-title>
+      <ion-card-subtitle>List</ion-card-subtitle>
+    </ion-card-header>
+        <ion-div class="classification-list-content">
+        <ion-table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nivel</th>
+              <th scope="col">Categoria</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let classification of classification"> 
+              <td>{{ classification.id }}</td>
+              <td>{{ classification.level }}</td>
+              <td>{{ classification.type }}</td>
+            </tr>
+          </tbody>
+        </ion-table>
+        </ion-div>
+    </ion-card>
+</ion-content>
